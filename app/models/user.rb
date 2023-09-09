@@ -20,6 +20,9 @@ class User < ApplicationRecord
   # フォロワーを取得
   has_many :followers, through: :passive_relationships, source: :follower
 
+  #閲覧数カウント用
+  has_many :read_counts, dependent: :destroy
+  
 
   has_one_attached :profile_image
 
