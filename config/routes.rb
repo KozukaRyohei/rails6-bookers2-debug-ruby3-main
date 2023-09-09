@@ -9,6 +9,11 @@ Rails.application.routes.draw do
     resource :book_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
   end
+  # DM機能↓
+  # resources :users, only: [:show,:edit,:update]
+  resources :messages, only: [:create]
+  resources :rooms, only: [:create,:show]
+  #       ↑
 
   resources :users, only: [:index, :show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
